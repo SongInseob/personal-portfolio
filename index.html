@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inseob Song</title>
+  <meta name="description" content="Startup seed investor, mentor, and deep-tech engineer. 26 years at Samsung group central R&D centers. Ph.D from KAIST. General Partner, S Cubic Angels.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      color: #222;
+      background: #fff;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* ---- Header ---- */
+    header {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      margin-bottom: 48px;
+    }
+
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .header-info h1 {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .tagline {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      color: #0066cc;
+      text-decoration: none;
+      font-size: 14px;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    a:focus-visible {
+      outline: 2px solid #0066cc;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* ---- Sections ---- */
+    section {
+      margin-bottom: 44px;
+    }
+
+    section h2 {
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #767676;
+      margin-bottom: 22px;
+      font-family: system-ui, -apple-system, sans-serif;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    /* ---- Timeline ---- */
+    .timeline-item {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .timeline-year {
+      font-size: 13px;
+      color: #767676;
+      font-family: system-ui, -apple-system, sans-serif;
+      min-width: 90px;
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .timeline-body strong {
+      font-size: 15px;
+      display: block;
+      margin-bottom: 2px;
+      color: #111;
+    }
+
+    .timeline-body .role {
+      font-size: 14px;
+      color: #666;
+      font-style: italic;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .timeline-body p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.55;
+    }
+
+    /* ---- Portfolio ---- */
+    .project-item {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 16px;
+      align-items: baseline;
+    }
+
+    .project-name {
+      min-width: 90px;
+      flex-shrink: 0;
+    }
+
+    .project-name a {
+      color: #0066cc;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .project-name a:hover {
+      text-decoration: underline;
+    }
+
+    .project-desc {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* ---- Achievements ---- */
+    .achievement-item {
+      margin-bottom: 16px;
+      padding-left: 14px;
+      border-left: 2px solid #e8e8e8;
+    }
+
+    .achievement-tag {
+      font-size: 11px;
+      font-family: system-ui, -apple-system, sans-serif;
+      color: #767676;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .achievement-item p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.55;
+    }
+
+    /* ---- Stats ---- */
+    .stats {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      margin-right: 40px;
+      margin-bottom: 16px;
+    }
+
+    .stat .number {
+      font-size: 28px;
+      font-weight: bold;
+      color: #111;
+      display: block;
+      line-height: 1.1;
+    }
+
+    .stat .label {
+      font-size: 12px;
+      color: #767676;
+      font-family: system-ui, -apple-system, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ---- Awards ---- */
+    .award-item {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 14px;
+    }
+
+    .award-year {
+      font-size: 13px;
+      color: #767676;
+      font-family: system-ui, -apple-system, sans-serif;
+      min-width: 90px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    .award-body p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.55;
+    }
+
+    /* ---- Mobile ---- */
+    @media (max-width: 480px) {
+      .container { padding: 32px 20px 60px; }
+
+      header {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .profile-photo {
+        width: 120px;
+        height: 120px;
+      }
+
+      .timeline-item,
+      .project-item,
+      .award-item {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .timeline-year,
+      .award-year {
+        min-width: auto;
+      }
+
+      .project-name {
+        min-width: auto;
+      }
+
+      .stat { margin-right: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <img src="profile-photo-resized.jpg" alt="Inseob Song" class="profile-photo">
+      <div class="header-info">
+        <h1>Inseob Song</h1>
+        <p class="tagline">Startup seed investor, mentor, and deep-tech engineer with 26 years at Samsung group central R&amp;D centers and a Ph.D from KAIST.</p>
+        <div class="links">
+          <a href="mailto:inseob.song@gmail.com">inseob.song@gmail.com</a>
+          <a href="https://www.linkedin.com/in/inseob-song-09188020/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Career -->
+    <section>
+      <h2>Career</h2>
+
+      <div class="timeline-item">
+        <span class="timeline-year">2017–present</span>
+        <div class="timeline-body">
+          <strong>S Cubic Angels</strong>
+          <span class="role">Startup Seed Investor &amp; Mentor — Seoul, Korea</span>
+          <p>Discovered and invested in 30+ startups as General Partner of a personal investment fund. Mentor 10+ startups every year.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <span class="timeline-year">2025–26</span>
+        <div class="timeline-body">
+          <strong>K-Digital Training</strong>
+          <span class="role">AI Bootcamp, 14th Cohort</span>
+          <p>Completed intensive AI/ML engineering program (May 2025 – Jan 2026).</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <span class="timeline-year">2004–2016</span>
+        <div class="timeline-body">
+          <strong>Samsung SDI</strong>
+          <span class="role">Fuel Cell Group Leader &amp; Battery System Development — Yongin, Korea</span>
+          <p>Led R&amp;D of DMFC soldier portable power (US Army MIL-STD certified, world-first), lithium-ion battery hybrid systems for electric forklifts, PEMFC MEA for fuel cell vehicles, and 25kW SOFC stacks for 100kW distributed power generation.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <span class="timeline-year">1996–2004</span>
+        <div class="timeline-body">
+          <strong>Samsung Electronics — Advanced Technology Center</strong>
+          <span class="role">MEMS Project Leader — Yongin, Korea</span>
+          <p>Developed MEMS angular rate sensor for image stabilization and applied it to Samsung digital video cameras — world first. Verified Micro Cooling System for laptop CPU cooling via micro-fabrication.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <span class="timeline-year">1993–1996</span>
+        <div class="timeline-body">
+          <strong>Samsung Heavy Industries</strong>
+          <span class="role">Senior Engineer — Daejeon, Korea</span>
+          <p>Developed forming process simulation tools for automobile body panels. Built CAD/CAM/CAE systems for automotive manufacturing.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <span class="timeline-year">1988–1994</span>
+        <div class="timeline-body">
+          <strong>KAIST</strong>
+          <span class="role">Ph.D., Mechanical Engineering — Daejeon, Korea</span>
+          <p>Thesis: Rigid-plastic finite element analysis of sheet metal forming processes using selective membrane/shell formulation and element refinement.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section>
+      <h2>Selected Portfolio</h2>
+
+      <div class="project-item">
+        <div class="project-name"><a href="https://infludeo.com/" target="_blank" rel="noopener noreferrer">Infludeo</a></div>
+        <span class="project-desc">AI-powered influencer marketing platform.</span>
+      </div>
+
+      <div class="project-item">
+        <div class="project-name"><a href="https://www.teamturing.com/" target="_blank" rel="noopener noreferrer">Turing</a></div>
+        <span class="project-desc">AI and deep learning technology company.</span>
+      </div>
+
+      <div class="project-item">
+        <div class="project-name"><a href="https://www.oprimed.com/" target="_blank" rel="noopener noreferrer">Oprimed</a></div>
+        <span class="project-desc">Digital health and medical device startup.</span>
+      </div>
+    </section>
+
+    <!-- Notable Achievements -->
+    <section>
+      <h2>Notable Achievements</h2>
+
+      <div class="achievement-item">
+        <span class="achievement-tag">World first &middot; MEMS</span>
+        <p>Applied MEMS angular rate sensor for camera image stabilization to a commercial digital video camera and obtained component approval from Samsung Electronics (2002).</p>
+      </div>
+
+      <div class="achievement-item">
+        <span class="achievement-tag">World first &middot; Military energy</span>
+        <p>Acquired US Army performance and full 15-item reliability approval (MIL-STD-810G, 461E, 1474D) for DMFC soldier portable power — reducing weight by 66–77% and energy cost by 50–97% vs. primary batteries, with 5,000+ hour certified lifetime.</p>
+      </div>
+
+      <div class="achievement-item">
+        <span class="achievement-tag">Korea first &middot; Industrial energy</span>
+        <p>Verified economic feasibility of lithium-ion hybrid battery systems replacing lead-acid batteries in material handling forklifts — field-tested at two OEMs and three logistics operators.</p>
+      </div>
+
+      <div class="achievement-item">
+        <span class="achievement-tag">National project &middot; $30.3M</span>
+        <p>Principal Investigator for development of eco-friendly 100kW-class SOFC power generation system (2008–2012).</p>
+      </div>
+    </section>
+
+    <!-- Publications & Patents -->
+    <section>
+      <h2>Publications &amp; Patents</h2>
+      <div class="stats">
+        <div class="stat">
+          <span class="number">63</span>
+          <span class="label">Issued Patents</span>
+        </div>
+        <div class="stat">
+          <span class="number">89</span>
+          <span class="label">Applications</span>
+        </div>
+        <div class="stat">
+          <span class="number">21</span>
+          <span class="label">Journal Papers</span>
+        </div>
+        <div class="stat">
+          <span class="number">46</span>
+          <span class="label">Conference Papers</span>
+        </div>
+        <div class="stat">
+          <span class="number">5</span>
+          <span class="label">Keynotes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section>
+      <h2>Awards</h2>
+
+      <div class="award-item">
+        <span class="award-year">2025</span>
+        <div class="award-body">
+          <p>Governor's Commendation, Gyeonggi-do — for contribution to startup activation.</p>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <span class="award-year">2020</span>
+        <div class="award-body">
+          <p>Governor's Commendation, Gyeonggi-do — for contribution to startup activation.</p>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <span class="award-year">2010</span>
+        <div class="award-body">
+          <p>National Meritorious Man, advancement of technology in fuel cell field — Ministry of Education, Science and Technology, Republic of Korea.</p>
+        </div>
+      </div>
+
+      <div class="award-item">
+        <span class="award-year">2001–2002</span>
+        <div class="award-body">
+          <p>Technology Breakthrough Award, Samsung Electronics — MEMS angular rate sensor and Micro Cooling System.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  </main>
+</body>
+</html>
