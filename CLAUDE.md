@@ -10,8 +10,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Assets
 
-- `profile-photo.jpg` — 프로필 사진 (deploy 전 ≤400px width, <100KB로 리사이즈 필요)
-- `2601(송인섭)-이력서.pdf` — 이력서 (경력/프로젝트 콘텐츠 원본)
+- `profile-photo-resized.jpg` — 프로필 사진 (400×405px, 44KB, 리사이즈 완료)
+- `2026(InSong)-Resume.md` — 영문 이력서 (경력/프로젝트 콘텐츠 원본)
+- `myinfo.md` — 태그라인, 포트폴리오 링크, 소셜 링크 정리본
 
 ## 확정된 설계 결정 (`/office-hours` 완료)
 
@@ -37,34 +38,21 @@ index.html
 └── Projects (3–5개)
 ```
 
-## /design-html 실행 전 준비 체크리스트
+## 현재 index.html 구성 (확정)
 
-아래 5가지가 준비되어야 `/design-html`을 실행할 수 있다:
+### 섹션 구조
+- **Header**: profile-photo-resized.jpg + "Inseob Song" + 태그라인 + Email/LinkedIn 링크
+- **Career**: 6개 타임라인 항목 (역순)
+- **Selected Portfolios**: Infludeo, Turing, Oprimed
+- **Notable Achievements**: 4개 항목 (World first × 2, Korea first, National project)
+- **Publications & Patents**: 통계 5개 (63 patents, 89 apps, 21 journals, 46 conf, 5 keynotes)
+- **Awards**: 3개 항목 (2020/2025 통합, 2010, 2001–2002)
 
-- [ ] 태그라인 (영어 한 문장) — **이력서에 없음, 직접 작성 필요**
-      예시: *"Startup seed investor and deep-tech engineer with 26 years at Samsung and a PhD from KAIST."*
-- [x] 경력 타임라인 (회사명, 역할, 기간 — 역순) — 이력서에서 추출 가능
-- [ ] 프로젝트 3–5개 (이름, 한줄 설명, GitHub/demo 링크) — **이력서에 없음, 직접 작성 필요**
-      (AI 부트캠프 결과물, 투자한 스타트업, 공개 가능한 기술 성과 등)
-- [ ] 소셜 링크 — Email `inseob.song@gmail.com` ✅ / **GitHub URL, LinkedIn URL 없음**
-- [ ] `profile-photo.jpg` 리사이즈 완료 — **현재 4000×3000px, 7.9MB → ≤400px, <100KB 필요**
-      ```bash
-      sips --resampleWidth 400 \
-        "/Users/songinseob/Library/Mobile Documents/com~apple~CloudDocs/WorkSpace/personal-portfolio/profile-photo.jpg" \
-        --out "/Users/songinseob/Library/Mobile Documents/com~apple~CloudDocs/WorkSpace/personal-portfolio/profile-photo.jpg"
-      ```
-
-### 이력서에서 바로 쓸 수 있는 경력 타임라인
-
-| 기간 | 소속 | 역할 |
-|------|------|------|
-| 2017.01–현재 | 에스큐빅엔젤스 (SQubic Angels) | 회장, 개인투자조합 GP |
-| 2025.05–2026.01 | K-Digital Training | AI 부트캠프 14기 수료 |
-| 2004.10–2016.05 | 삼성SDI | 연료전지 그룹장, 배터리시스템 개발팀장 |
-| 1996.02–2004.09 | 삼성전자 종합기술원 | MEMS 센서 개발 과제리더 |
-| 1993.10–1996.01 | 삼성중공업 | 자동차 차체 제조공정 설계 엔지니어 |
-| 1990.03–1993.09 | 삼성전자 생산기술센터 | — |
-| 1994.08 | KAIST | 정밀공학 박사 |
+### 주요 설계 결정 (확정)
+- 2차 텍스트 색상: `#767676` (WCAG AA 4.54:1 통과)
+- 외부 링크: `rel="noopener noreferrer"` 전체 적용
+- `<main>` 랜드마크, `a:focus-visible` outline 적용
+- 2020/2025 경기도지사 표창 → 한 항목으로 통합 표시
 
 ## AI 개발 환경 (gstack + gbrain)
 
@@ -111,19 +99,27 @@ gbrain MCP 서버는 `~/.claude/settings.json`에 등록되어 있어 Claude Cod
 - [x] gstack 설치 (`~/.claude/skills/gstack`)
 - [x] gbrain 설치 및 초기화 (`~/.gbrain/brain.pglite`)
 - [x] gbrain MCP 서버 등록 (`~/.claude/settings.json`)
-- [x] git init
+- [x] git init + GitHub CLI(`gh`) 설치 및 로그인 (SongInseob)
 - [x] `/office-hours` → 포트폴리오 기획 완료 (설계 문서 APPROVED)
 - [x] 콘텐츠 준비 완료 (2026(InSong)-Resume.md + myinfo.md)
+- [x] `profile-photo-resized.jpg` 생성 (400×405px, 44KB)
 - [x] `/design-html` → `index.html` 생성 완료 (2026-05-01)
-      - 폰트: system sans-serif
-      - 섹션: Career, Selected Portfolio, Notable Achievements, Publications & Patents, Awards
-      - 모바일(375px) / 데스크톱(1440px) 검증 완료
       - 디자인 아티팩트: `~/.gstack/projects/personal-portfolio/designs/portfolio-20260501/`
-- [x] `/qa` → Chromium 테스트 완료 (health score 97/100, PASS — P3 only)
-- [x] `/ship` → GitHub Pages 배포 완료
-      - URL: https://songinseob.github.io/personal-portfolio/
-      - Repo: https://github.com/SongInseob/personal-portfolio
-      - Branch: main → Pages 자동 빌드
+- [x] `/review` → WCAG AA 색상 수정, focus-visible 추가
+- [x] `/qa` → health score 97/100, PASS (P3 only: OG tags 없음, skip-link 없음)
+      - QA 리포트: `.gstack/qa-reports/qa-report-localhost-2026-05-01.md`
+- [x] GitHub Pages 배포 완료 (2026-05-01)
+      - 라이브 URL: https://songinseob.github.io/personal-portfolio/
+      - 레포: https://github.com/SongInseob/personal-portfolio
+      - `git push` → 1~2분 자동 반영
+- [x] 사소한 수정 (2026-05-01): Selected Portfolios 표기, 수상 2020/2025 통합
+
+## 다음 세션에서 할 일 (선택)
+
+- [ ] Open Graph 메타태그 추가 (`og:title`, `og:description`, `og:image`) — LinkedIn 공유 시 미리보기 카드
+- [ ] Skip-to-content 링크 추가 (키보드 접근성)
+- [ ] 포트폴리오 회사 설명 검토 (Infludeo/Turing/Oprimed 한줄 설명 정확도 확인)
+- [ ] 추가 콘텐츠 여부 확인 (AI 부트캠프 프로젝트, 발표 자료 등)
 
 ## Skill routing
 
