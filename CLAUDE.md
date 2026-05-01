@@ -119,8 +119,11 @@ gbrain MCP 서버는 `~/.claude/settings.json`에 등록되어 있어 Claude Cod
       - 섹션: Career, Selected Portfolio, Notable Achievements, Publications & Patents, Awards
       - 모바일(375px) / 데스크톱(1440px) 검증 완료
       - 디자인 아티팩트: `~/.gstack/projects/personal-portfolio/designs/portfolio-20260501/`
-- [ ] `/qa` → Chromium 테스트
-- [ ] `/ship` → GitHub Pages 배포
+- [x] `/qa` → Chromium 테스트 완료 (health score 97/100, PASS — P3 only)
+- [x] `/ship` → GitHub Pages 배포 완료
+      - URL: https://songinseob.github.io/personal-portfolio/
+      - Repo: https://github.com/SongInseob/personal-portfolio
+      - Branch: main → Pages 자동 빌드
 
 ## Skill routing
 
