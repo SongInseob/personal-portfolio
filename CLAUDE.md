@@ -113,13 +113,17 @@ gbrain MCP 서버는 `~/.claude/settings.json`에 등록되어 있어 Claude Cod
       - 레포: https://github.com/SongInseob/personal-portfolio
       - `git push` → 1~2분 자동 반영
 - [x] 사소한 수정 (2026-05-01): Selected Portfolios 표기, 수상 2020/2025 통합
+- [x] 콘텐츠 보완 (2026-05-02):
+      - OG / Twitter Card 메타태그 추가
+      - 포트폴리오 회사 설명 정확도 반영 (Infludeo/Turing/Oprimed)
+      - Invited Talks 섹션 신설 (7개, 2004–2013)
+      - Publications & Patents 통계: 5 Keynotes → 7 Invited Talks
+      - Notable Achievements 연도 태그 일관화, National project SOFC/DMFC 분리
 
 ## 다음 세션에서 할 일 (선택)
 
-- [ ] Open Graph 메타태그 추가 (`og:title`, `og:description`, `og:image`) — LinkedIn 공유 시 미리보기 카드
 - [ ] Skip-to-content 링크 추가 (키보드 접근성)
-- [ ] 포트폴리오 회사 설명 검토 (Infludeo/Turing/Oprimed 한줄 설명 정확도 확인)
-- [ ] 추가 콘텐츠 여부 확인 (AI 부트캠프 프로젝트, 발표 자료 등)
+- [ ] 추가 콘텐츠 여부 확인 (AI 부트캠프 프로젝트 등)
 
 ## Skill routing
 
