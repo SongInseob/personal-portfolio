@@ -120,6 +120,13 @@ gbrain MCP 서버는 `~/.claude/settings.json`에 등록되어 있어 Claude Cod
       - Publications & Patents 통계: 5 Keynotes → 7 Invited Talks
       - Notable Achievements 연도 태그 일관화, National project SOFC/DMFC 분리
       - 포트폴리오 회사 설명 추가 수정 (K-POP, Turing 문구 간결화)
+- [x] 추가 수정 (2026-05-02 계속):
+      - Notable Achievements 연도 일관화 완료 (MEMS 2002 태그 추가, 본문 연도 제거)
+      - National project SOFC(2008–2012, $30.3M) / DMFC(2011–2014, $9.8M) 분리
+      - Turing 설명 간결화 (Global 제거, elites 제거, worldwide 제거)
+- [x] Notion 포트폴리오 Markdown 생성 (2026-05-02)
+      - 파일: `notion-portfolio.md`
+      - Notion에서 `/import` → Markdown & CSV 로 업로드하거나 복사-붙여넣기
 
 ## 다음 세션에서 할 일 (선택)
 
@@ -128,6 +135,7 @@ gbrain MCP 서버는 `~/.claude/settings.json`에 등록되어 있어 Claude Cod
 - [ ] `/learn` → 프로젝트 설계 결정사항 gbrain 저장
 - [ ] Skip-to-content 링크 추가 (키보드 접근성)
 - [ ] 추가 콘텐츠 여부 확인 (AI 부트캠프 프로젝트 등)
+- [ ] Notion 페이지 직접 연동 (Notion API MCP 설정 시)
 
 ## 참고 사항
 
