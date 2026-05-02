@@ -119,11 +119,21 @@ gbrain MCP 서버는 `~/.claude/settings.json`에 등록되어 있어 Claude Cod
       - Invited Talks 섹션 신설 (7개, 2004–2013)
       - Publications & Patents 통계: 5 Keynotes → 7 Invited Talks
       - Notable Achievements 연도 태그 일관화, National project SOFC/DMFC 분리
+      - 포트폴리오 회사 설명 추가 수정 (K-POP, Turing 문구 간결화)
 
 ## 다음 세션에서 할 일 (선택)
 
+- [ ] `/canary` → 라이브 GitHub Pages URL 기준 배포 후 모니터링
+- [ ] `/design-review` → 시각적 폴리싱 (Invited Talks 섹션 추가 후 전체 흐름 재점검)
+- [ ] `/learn` → 프로젝트 설계 결정사항 gbrain 저장
 - [ ] Skip-to-content 링크 추가 (키보드 접근성)
 - [ ] 추가 콘텐츠 여부 확인 (AI 부트캠프 프로젝트 등)
+
+## 참고 사항
+
+- 로컬에서 `index.html` 직접 열면 Chrome 보안 정책으로 이미지 안 보임
+  → 로컬 미리보기: `python3 -m http.server 8080` 후 `localhost:8080` 접속
+  → 평소엔 GitHub Pages URL 사용 권장
 
 ## Skill routing
 
